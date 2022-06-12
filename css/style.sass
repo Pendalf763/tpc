@@ -1,0 +1,1018 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Raleway:wght@500;600&display=swap')
+
+
+// ligth theme
+html[theme='light']
+	--clr-bg: #FFFFFF
+	--clr-dark: #0B0B0D
+	--clr-substrate: #F4F6F8
+	--clr-divider: #E4EEEF
+	--clr-txt: #5B5B5E
+	--clr-txtPrimary: #0B0B0D
+	--clr-txtSecondary: #18181B
+	--clr-blue: #2849EC
+	--clr-white: #FFFFFF
+
+
+
+html[theme='dark']
+	--clr-bg: #0D0E13
+	--clr-dark: #13141B
+	--clr-substrate: #13141B
+	--clr-divider: #1A1C28
+	--clr-txt: #9498AB
+	--clr-txtPrimary: #FFF
+	--clr-txtSecondary: #9498AB
+	--clr-blue: #2849EC
+	--clr-white: #FFF
+
+$container-width: 1244px
+
+=font($color, $font-size, $font-weight, $line-height)
+	color: $color
+	font-size: $font-size
+	font-weight: $font-weight
+	line-height: $line-height
+
+*,
+*::before,
+*::after
+	margin: 0
+	padding: 0
+	border: none
+	box-sizing: border-box
+
+html, body
+	height: 100%
+	background-color: var(--clr-bg)
+
+body
+	+font(var(--clr-txt), 10px, 500, 140%)
+	font-family: 'Raleway', sans-serif
+
+a 
+	text-decoration: none
+	outline: none
+
+li
+	list-style: none
+
+img
+	display: block
+
+.img
+	max-width: 100%
+	height: auto
+
+_ibg
+	position: relative
+	& img
+		object-fit: cover
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+
+::-webkit-scrollbar
+	width: 2px
+
+::-webkit-scrollbar-thumb
+	background-color: var(--clr-blue)
+
+::-webkit-scrollbar-track
+	background-color: var(--clr-bg)
+
+.wrapper
+	overflow: hidden
+	min-height: 100%
+	display: flex
+	flex-direction: column
+	&__light
+		position: relative
+		width: 100%
+
+.light
+	&__left,
+	&__right
+		position: fixed
+		width: 180px
+		height: 180px
+		background-color: var(--clr-blue)
+
+		border-radius: 50%
+		filter: blur(500px)
+
+	&__right
+		right: 0
+		top: 0
+
+
+.page
+	flex: 1 1 auto
+	&__main
+		margin-bottom: 140px
+	&__seats
+		margin-bottom: 140px
+	&__reviews
+		margin-bottom: 180px
+	&__about
+		margin-bottom: 130px
+	&__faq
+		margin-bottom: 150px
+	&__appt
+		margin-bottom: 150px
+
+[class*="__container"]
+	 width: 100%
+	 max-width: $container-width
+	 margin: 0 auto
+	 padding: 0 15px
+
+
+
+
+
+
+// GRIDS
+
+.grid2
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	grid-gap: 10px
+
+.grid3
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-gap: 10px
+
+.grid4
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	grid-gap: 10px
+
+
+
+
+
+
+// BTN STYLES
+
+.btn
+	padding: 10px 25px 12px
+	
+	+font(var(--clr-white), 16px, 600, 120%)
+
+	background-color: var(--clr-blue)
+	border-radius: 1000px
+
+	transition: .3s ease
+	&:hover
+		background-color: #526df4
+	&:active
+		background-color: #1F3AC3
+	&_big
+		padding-top: 34px
+		padding-bottom: 38px
+		font-size: 24px
+		text-align: center
+	&_mt45
+		margin-top: 45px
+	&_bgc-white
+		color: var(--clr-blue)
+		background-color: var(--clr-white)
+
+.btn-ic
+	display: flex;
+	align-items: center
+	justify-content: center
+	width: 41px
+	height: 41px
+
+	background-color: var(--clr-substrate)
+	border-radius: 50%
+
+	color: var(--clr-txtPrimary)
+
+	transition: .3s ease
+	&:hover
+		background-color: var(--clr-blue)
+	&:hover svg
+		stroke: var(--clr-white)
+
+
+
+
+
+
+// TXT STYLES
+
+.h1
+	+font(var(--clr-txtPrimary), 58px, 600, 130%)
+	font-family: 'Montserrat Alternates'
+
+.h2
+	+font(var(--clr-txtPrimary), 42px, 600, 130%)
+	font-family: 'Montserrat Alternates'
+
+.h3
+	+font(var(--clr-txtPrimary), 32px, 600, 130%)
+	font-family: 'Montserrat Alternates'
+
+.description
+	+font(var(--clr-txt), 20px, 500, 140%)
+	font-feature-settings: 'pnum' on, 'lnum' on
+	&_27px
+		font-size: 24px
+		line-height: 150%
+	&_24px
+		font-size: 24px
+		line-height: 150%
+	&_18px
+		font-size: 18px
+		line-height: 130%
+	&_16px
+		font-size: 16px
+		line-height: 130%
+	&_fw600
+		font-weight: 600
+	&_lh150
+		line-height: 150%
+	&_clr-primary
+		color: var(--clr-txtPrimary)
+	&_clr-secondary
+		color: var(--clr-txtSecondary)
+
+.link
+	+font(var(--clr-txtSecondary), 18px, 600, 130%)
+	font-feature-settings: 'pnum' on, 'lnum' on
+	&::after
+		content: ''
+		display: block
+		width: 9px
+		height: 9px
+		margin: 0 auto
+		transform: translateY(10px)
+
+		opacity: 0
+		background-color: var(--clr-blue)
+		border-radius: 50%
+
+		transition: .3s ease
+	&:hover::after
+		transform: translateY(7px)
+		opacity: 1	
+
+
+
+
+
+
+// HEADER
+
+.header
+	padding: 25px 0
+	background-color: var(--clr-bg)
+	&__left,
+	&__right
+		display: flex;
+		align-items: center
+	&__top,
+	&__bottom
+		display: flex;
+		justify-content: space-between
+		align-items: center
+	&__top
+		position: relative
+		padding-bottom: 26px
+		margin-bottom: 34px
+
+		border-bottom: 1px solid var(--clr-divider)
+		&::before,
+		&::after
+			content: ''
+			display: block
+			width: 6px
+			height: 6px
+			position: absolute
+
+			background-color: var(--clr-divider)
+			border-radius: 50%
+		&::before
+			left: 0
+			bottom: -4px
+		&::after
+			right: 0
+			bottom: -4px
+	&__logo
+		margin-right: 30px
+	&__address
+		display: flex;
+	&__address > *:not(:last-child)
+		margin-right: 20px
+	&__btns > *:not(:last-child)
+		margin-right: 10px
+	&__phone
+		display: none
+	&__burger-ic
+		display: none
+
+
+
+
+
+// NAV
+
+.menu
+	&__list
+		display: flex;
+	&__item:not(:last-child)
+		margin-right: 30px
+	&__phone
+		color: var(--clr-txtPrimary)
+		&::after
+			content: ''
+			display: block
+			width: 9px
+			height: 9px
+			margin: 0 auto
+			transform: translateY(10px)
+
+			opacity: 0
+			background-color: var(--clr-blue)
+			border-radius: 50%
+
+			transition: .3s ease
+		&:hover::after
+			transform: translateY(7px)
+			opacity: 1	
+
+
+
+
+
+
+// MAIN
+
+.main
+	&__h1
+		margin-bottom: 40px
+	&__video
+		margin-bottom: 50px
+	&__video video
+		object-fit: cover
+		width: 100%
+		max-width: 100%
+		max-height: 527px
+		border-radius: 16px
+		overflow: hidden
+
+		background-color: var(--clr-substrate)
+	&__items
+		@extend .grid3
+	&__item
+		border-radius: 10px
+		background: var(--clr-substrate)
+		
+		transition: transform .3s ease
+		&:hover
+			transform: translateY(-10px)
+
+.item-main
+	display: flex;
+	align-items: center
+	justify-content: space-between
+	padding: 23px 30px 24px 30px;
+	&__title
+		margin-bottom: 4px
+	&__icon
+		margin-top: 1px
+		color: var(--clr-blue)
+
+
+
+
+
+
+// SEATS
+
+.seats
+	&__h2
+		margin: 0px 0px 35px 0px;
+	&__items
+		display: flex;
+		flex-direction: column
+	&__item
+		position: relative
+		display: flex;
+		justify-content: space-between
+		padding: 20px 30px 22px
+
+		border-radius: 1000px
+	&__item:hover::before
+		opacity: 1
+		left: -25px
+	&__item::before
+		content: ''
+		display: block
+		width: 9px
+		height: 9px
+		position: absolute
+		top: 50%
+		left: -30px
+		transform: translateY(-50%)
+
+		border-radius: 50%
+		background-color: var(--clr-blue)
+		opacity: 0
+
+		transition: .3s ease
+	&__left
+		padding-right: 20px
+	&__left > *
+		transition: .3s ease
+	&__item:hover &__left > *
+		color: var(--clr-txtPrimary)
+	&__left,
+	&__right
+		display: flex;
+	&__left > *:not(:last-child),
+	&__right > *:not(:last-child)
+		margin-right: 20px
+	&__left > :first-child
+		min-width: 86px
+	&__item:nth-child(odd)
+		background-color: var(--clr-substrate)
+
+
+
+
+
+
+// REVIEWS
+
+.reviews
+	&__item
+		position: relative
+		padding: 40px 50px 25px
+
+		border: 1px solid var(--clr-divider)
+		border-radius: 16px
+		&::before,
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			width: 62px
+			height: 64px
+		&::before			
+			top: -30px
+			left: -50px
+
+			background-image: url(../img/reviews/decore-left.svg)
+		&::after			
+			bottom: -30px
+			right: -50px
+
+			background-image: url(../img/reviews/decore-right.svg)
+	&__txt
+		position: relative
+		padding-bottom: 35px
+		margin-bottom: 20px
+
+		border-bottom: 1px solid var(--clr-divider)
+		&::before,
+		&::after
+			content: ''
+			display: block
+			width: 6px
+			height: 6px
+			position: absolute
+
+			background-color: var(--clr-divider)
+			border-radius: 50%
+		&::before
+			left: 0
+			bottom: -4px
+		&::after
+			right: 0
+			bottom: -4px
+	&__txt > *:not(:last-child)
+		margin-bottom: 20px
+	&__info
+		display: flex;
+		align-items: center
+		justify-content: space-between
+	&__slides
+		display: flex;
+		align-items: center
+		color: var(--clr-blue)
+	&__slide
+		padding: 2px 10px 0
+	&__avatars
+		display: flex;
+		justify-content: center
+		padding: 0 30px
+		position: absolute
+		top: 100%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+		background-color: var(--clr-bg)
+	&__avatars > *:not(:last-child)
+		margin-right: 30px
+	&__avatar img
+		max-width: 100px
+		max-height: 100px
+
+		object-fit: cover
+		border-radius: 50%
+		
+		background-color: var(--clr-bg)
+	&__avatar.active::after
+		content: ''
+		display: block
+		width: 9px
+		height: 9px
+		margin: 0 auto
+		transform: translateY(15px)
+
+		opacity: 1
+		background-color: var(--clr-blue)
+		border-radius: 50%
+	&__avatar::after
+		content: ''
+		display: block
+		width: 9px
+		height: 9px
+		margin: 0 auto
+		transform: translateY(19px)
+
+		opacity: 0
+		background-color: var(--clr-blue)
+		border-radius: 50%
+
+		transition: .3s ease
+	&__avatar:hover::after
+		transform: translateY(15px)
+		opacity: 1
+
+.author-reviews
+	display: flex;
+	align-items: center
+	&__pic
+		display: none
+		margin-right: 20px
+		width: 60px
+		height: 60px
+		border-radius: 50%
+		overflow: hidden
+	&__txt > *:not(:last-child)
+		margin-bottom: 5px
+
+
+
+
+
+
+// ABOUT
+
+.about
+	&__items
+		display: grid;
+		grid-template-columns: repeat(12, 1fr)
+		grid-column-gap: 10px
+		grid-row-gap: 10px
+	&__left
+		grid-area: 2 / 1 / 3 / 5
+	&__right
+		grid-area: 2 / 5 / 3 / 13
+		margin-top: 15px
+	&__txt
+		margin-bottom: 40px
+	&__txt > *:not(:last-child)
+		margin-bottom: 20px
+	&__pluses
+		margin-bottom: 50px
+	&__pluses > *:not(:last-child)
+		margin-bottom: 15px
+	&__pluse
+		padding: 0px 0px 0px 39px;
+		background: url(../img/tick.svg) left center no-repeat
+	&__benefits
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		grid-gap: 0px
+		margin-bottom: 50px
+	&__benefit
+		padding: 25px 35px 30px 
+		margin-right: -1px
+		border: 1px solid var(--clr-divider)
+		&:first-child
+			border-radius: 16px 0px 0px 16px
+		&:last-child
+			border-radius: 0px 16px 16px 0px
+	&__title-number
+		color: var(--clr-blue)
+		margin-bottom: 5px
+	&__title
+		margin-bottom: 35px
+	&__logos
+		@extend .grid2
+	&__logos
+		border-radius: 16px
+		overflow: hidden
+	&__logo
+		display: flex;
+		align-items: center
+		justify-content: center
+		padding: 20px 0
+
+		background-color: var(--clr-substrate)
+		& img
+			max-height: 160px
+
+
+
+
+
+
+// FAQ
+
+.faq
+	&__items
+		@extend .about__items
+	&__left
+		grid-area: 2 / 1 / 3 / 5
+	&__right
+		grid-area: 2 / 5 / 3 / 13
+	&__item
+		position: relative
+		padding: 25px 30px 29px
+
+		border: 1px solid var(--clr-divider)
+		border-radius: 10px
+
+		color: var(--clr-blue)
+		cursor: pointer
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			top: 27px
+			right: 30px
+			width: 24px
+			height: 24px
+
+			background: url(../img/chevron-bottom.svg) center no-repeat
+
+			transition: .3s ease
+		&.active::after
+			transform: rotate(180deg)
+	&__item:not(:last-child)
+		margin-bottom: 20px
+	&__overview
+		display: none
+		margin-top: 15px
+	&__link
+		color: var(--clr-blue)
+		transition: .3s ease
+		&:hover
+			color: #526df4
+
+
+
+
+
+
+
+// APPT
+
+.appt
+	background-color: var(--clr-blue)
+	&__inner
+		@extend .grid2
+	&__inner
+		padding: 55px 0 65px
+	&__txt h2, p
+		color: var(--clr-white)
+	&__txt > *:not(:last-child)
+		margin-bottom: 10px
+	&__btn:hover
+		background-color: #13141B
+
+
+
+
+
+
+// FOOTER
+
+.footer
+	background-color: var(--clr-substrate)
+	&__inner
+		@extend .about__items
+	&__left
+		grid-area: 1 / 1 / 2 / 9
+		padding: 43px 33px 45px 0px;
+	&__right
+		grid-area: 1 / 9 / 2 / 13
+	&__map
+		height: 100%
+		& iframe
+			width: 100%
+			height: 100%
+			line-height: 1
+	&__head
+		display: flex;
+		align-items: center
+		justify-content: space-between
+		padding-bottom: 35px
+		margin-bottom: 30px
+
+		border-bottom: 1px solid var(--clr-divider)
+	&__logo
+		margin-right: 30px
+	&__socials
+		display: flex;
+		& > *
+			transition: .3s ease
+		& > *:not(:last-child)
+			margin-right: 20px
+		& > *:hover
+			transform: translateY(-5px)
+	&__address
+		display: flex;
+		padding-bottom: 45px
+		margin-bottom: 30px
+
+		border-bottom: 1px solid var(--clr-divider)
+	&__contacts
+		display: flex;
+		padding-bottom: 30px
+		margin-bottom: 40px
+		
+		border-bottom: 1px solid var(--clr-divider)
+		& > *:not(:last-child)
+			margin-right: 50px
+		& > *::after
+			content: ''
+			display: block
+			width: 9px
+			height: 9px
+			margin: 0 auto
+			transform: translateY(10px)
+
+			opacity: 0
+			background-color: var(--clr-blue)
+			border-radius: 50%
+
+			transition: .3s ease
+		& > *:hover::after
+			transform: translateY(7px)
+			opacity: 1
+
+.address-footer__address
+	max-width: 458px
+	margin-right: 50px
+
+
+
+
+
+
+// @MEDIA
+
+@media (max-width: 1280px)
+	.header
+		&__address,
+		&__bottom
+			display: none
+		&__phone,
+		&__burger-ic
+			display: block
+		&__top
+			margin-bottom: 0
+	.reviews
+		&__avatars
+			display: none
+	.author-reviews
+		&__pic
+			display: block
+
+
+
+
+
+@media (max-width: 1024px)
+	.header
+		&__btns > *:not(:last-child)
+			display: none
+
+	.h1
+		font-size: 36px
+	.h2
+		font-size: 32px
+	.h3
+		font-size: 24px
+
+	.main__items
+		    grid-template-columns: repeat(1, 1fr)
+
+	.seats
+		&__item
+			padding: 20px 60px 22px
+			flex-direction: column
+		&__left
+			margin-bottom: 10px
+		&__right
+			margin-left: 106px
+
+	.about
+		&__items
+			display: flex;
+			flex-direction: column
+
+	.reviews
+		&__avatars
+			display: none
+
+	.faq
+		&__h2
+			margin-bottom: 30px
+
+	.footer
+		&__left
+			padding-right: 0
+		&__map iframe
+			height: 500px
+
+
+
+
+
+@media (max-width: 768px)
+	.page
+		&__main,
+		&__seats,
+		&__reviews,
+		&__about,
+		&__faq,
+		&__appt
+			margin-bottom: 100px
+
+	.header
+		&__left
+			align-items: start
+			flex-direction: column
+
+		&__logo
+			margin-bottom: 10px
+
+	.h1
+		font-size: 32px
+		text-align: center
+	.h2
+		font-size: 28px
+	
+	.btn
+		&_big
+			padding: 22px 0 24px
+		
+	.seats
+		&__h2
+			text-align: center
+
+	.appt
+		&__inner
+			display: flex;
+			flex-direction: column
+			justify-content: center
+			text-align: center
+			padding: 55px 0 85px
+		&__txt
+			margin-bottom: 30px
+	.footer
+		&__head
+			flex-direction: column
+		&__logo
+			margin-bottom: 30px
+
+
+
+
+
+@media (max-width: 680px)
+	.about
+		&__benefits
+			grid-template-columns: repeat(1, 1fr)
+		&__benefit
+			margin-right: 0
+			margin-bottom: -1px
+		&__benefit:first-child
+			border-radius: 16px 16px 0  0
+		&__benefit:last-child
+			border-radius: 0 0 16px 16px
+		&__logos img
+				max-height: 60px
+		&__title
+			text-align: center
+
+
+
+@media (max-width: 480px)
+	.page
+		&__main,
+		&__seats,
+		&__reviews,
+		&__about,
+		&__faq,
+		&__appt
+			margin-bottom: 70px
+	.header
+		&__logo
+			display: none
+		&__phone
+			font-size: 24px!important
+
+	.h1
+		font-size: 28px
+	.h2
+		font-size: 24px
+	.h3
+		font-size: 20px
+	.description
+		font-size: 18px
+	.description_24px
+		font-size: 18px
+
+	.main
+		&__h1
+			margin-bottom: 20px
+		&__video
+			width: calc( 100% + 30px )
+			margin: 0 -15px 30px
+			& video
+				border-radius: 0
+
+	.seats
+		&__item
+			width: calc( 100% + 30px )
+			margin: 0 -15px
+			padding: 20px 15px 22px
+
+			border-radius: 0
+		&__left > *:not(:last-child),
+		&__right > *:not(:last-child)
+    		margin-right: 10px;
+		&__right
+			margin-left: 96px
+
+	.reviews
+		&__info
+			flex-direction: column
+
+	.author-reviews
+		margin-bottom: 20px
+
+	.footer
+		text-align: center
+		&__address,
+		&__contacts
+			flex-direction: column
+		&__contacts > *:not(:last-child)
+			margin-right: 0
+			margin-bottom: 10px
+			
+	
+	.address-footer
+		&__address
+			margin-right: 0
+		& > *:not(:last-child)
+			margin-bottom: 20px
+			
+
+
+
+
+
+@media (max-width: 360px)
+	.about
+		&__logos
+			grid-template-columns: repeat(1, 1fr)
+
+
+
+@media (max-width: 320px)
+	.page
+		&__main,
+		&__seats,
+		&__reviews,
+		&__about,
+		&__faq,
+		&__appt
+			margin-bottom: 50px
+
+
+
+	
