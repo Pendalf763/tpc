@@ -6,6 +6,7 @@ html[theme='light']
 	--clr-bg: #FFFFFF
 	--clr-dark: #0B0B0D
 	--clr-substrate: #F4F6F8
+	--clr-substrateMobile: rgba(13, 14, 19, 0.7)
 	--clr-divider: #E4EEEF
 	--clr-txt: #5B5B5E
 	--clr-txtPrimary: #0B0B0D
@@ -19,6 +20,7 @@ html[theme='dark']
 	--clr-bg: #0D0E13
 	--clr-dark: #13141B
 	--clr-substrate: #13141B
+	--clr-substrateMobile: rgba(13, 14, 19, 0.7)
 	--clr-divider: #1A1C28
 	--clr-txt: #9498AB
 	--clr-txtPrimary: #FFF
@@ -59,6 +61,9 @@ li
 
 img
 	display: block
+
+button
+	cursor: pointer
 
 .img
 	max-width: 100%
@@ -159,7 +164,7 @@ _ibg
 // BTN STYLES
 
 .btn
-	padding: 10px 25px 12px
+	padding: 11px 25px 12px
 	
 	+font(var(--clr-white), 16px, 600, 120%)
 
@@ -186,19 +191,31 @@ _ibg
 	display: flex;
 	align-items: center
 	justify-content: center
-	width: 41px
-	height: 41px
+	width: 42px
+	height: 42px
 
 	background-color: var(--clr-substrate)
 	border-radius: 50%
 
 	color: var(--clr-txtPrimary)
+	&::after
+		content: ''
+		display: block
+		width: 9px
+		height: 9px
+		position: absolute
+		transform: translateY(36px)
+		margin: 0 auto
+		
 
-	transition: .3s ease
-	&:hover
+		opacity: 0
 		background-color: var(--clr-blue)
-	&:hover svg
-		stroke: var(--clr-white)
+		border-radius: 50%
+
+		transition: .3s ease
+	&:hover::after
+		opacity: 1
+		transform: translateY(33px)
 
 
 
@@ -268,6 +285,94 @@ _ibg
 
 
 
+// BURGER MENU
+
+.mobile-menu
+	visibility: hidden
+	opacity: 0
+	position: fixed
+	top: 0
+	right: -110px
+	width: 100%
+	height: 100%
+	padding: 24px 0
+	background: var(--clr-substrate);
+	backdrop-filter: blur(30px)
+
+	z-index: 10
+
+	transition: .3s ease
+	&.active
+		visibility: visible
+		opacity: 1
+		right: 0
+	&__close
+		background-color: var(--clr-blue)
+		& svg
+			stroke: #fff
+	&__logo
+		margin-right: 30px
+	&__top
+		display: flex;
+		justify-content: space-between
+		align-items: center
+		padding-bottom: 24px
+		margin-bottom: 24px
+	&__contacts
+		text-align: center
+		padding-bottom: 35px
+		margin-bottom: 40px
+	&__address
+		margin-top: 15px
+	&__address > *:not(:last-child)
+		margin-bottom: 10px
+	&__contacts,
+	&__top
+		position: relative
+		border-bottom: 1px solid var(--clr-divider)
+	&__nav
+		text-align: center
+		margin-bottom: 40px
+	&__item
+		padding: 15px 0 10px
+		margin-bottom: -1px
+		border-top: 1px solid var(--clr-divider)
+		border-bottom: 1px solid var(--clr-divider)
+	&__btns
+		display: flex;
+		justify-content: center
+		& > *:not(:last-child)
+			margin-right: 10px
+		& > *.btn-ic
+			background-color: var(--clr-divider)
+
+
+
+	&__contacts::before,
+	&__contacts::after,
+	&__top::before,
+	&__top::after
+		content: ''
+		display: block
+		width: 6px
+		height: 6px
+		position: absolute
+
+		background-color: var(--clr-divider)
+		border-radius: 50%
+	&__contacts::before,
+	&__top::before
+		left: 0
+		bottom: -4px
+	&__contacts::after,
+	&__top::after
+		right: 0
+		bottom: -4px
+
+
+
+
+
 // HEADER
 
 .header
@@ -285,7 +390,7 @@ _ibg
 	&__top
 		position: relative
 		padding-bottom: 26px
-		margin-bottom: 34px
+		margin-bottom: 26px
 
 		border-bottom: 1px solid var(--clr-divider)
 		&::before,
@@ -671,9 +776,12 @@ _ibg
 			transform: rotate(180deg)
 	&__item:not(:last-child)
 		margin-bottom: 20px
+	&__title
+		padding-right: 45px
 	&__overview
 		display: none
 		margin-top: 15px
+		padding-right: 45px
 	&__link
 		color: var(--clr-blue)
 		transition: .3s ease
@@ -698,8 +806,15 @@ _ibg
 		color: var(--clr-white)
 	&__txt > *:not(:last-child)
 		margin-bottom: 10px
+	&__btn
+		border: 3px solid transparent
 	&__btn:hover
-		background-color: #13141B
+		color: var(--clr-white)
+		border: 3px solid var(--clr-white)
+		background-color: var(--clr-blue)
+	&__btn:active
+		color: var(--clr-blue)
+		background-color: var(--clr-white)
 
 
 

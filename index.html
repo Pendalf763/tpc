@@ -10,10 +10,33 @@
 </head>
 <body>
 	<div class="wrapper">
-		<!-- <div class="wrapper__light light">
-			<div class="light__left"></div>
-			<div class="light__right"></div>
-		</div> -->
+		<div class="wrapper__menu mobile-menu">
+			<div class="mobile-menu__container">
+				<div class="mobile-menu__top">
+					<a href="#" class="mobile-menu__logo"><img class="img logo" src="img/logo-dark.svg" alt=""></a>
+					<button class="btn-ic mobileMenu mobile-menu__close"><i data-feather="x"></i></button>
+				</div>
+				<div class="mobile-menu__contacts">
+					<a href="tel:88482290096" class="description description_24px description_fw600 description_clr-primary mobile-menu__phone">8 8482 29 00 96</a>
+					<div class="mobile-menu__address">
+						<p class="description description_18px">ул. Комсомольская, 165, кабинет 102</p>
+						<p class="description description_18px description_clr-primary">пн-пт 8:00-17:00</p>
+					</div>
+				</div>
+				<ul class="mobile-menu__nav">
+					<li class="mobile-menu__item"><a href="#" class="link">Количество мест на поступление</a></li>
+					<li class="mobile-menu__item"><a href="#" class="link">Отзывы</a></li>
+					<li class="mobile-menu__item"><a href="#" class="link">О колледже</a></li>
+					<li class="mobile-menu__item"><a href="#" class="link">FAQ</a></li>
+					<li class="mobile-menu__item"><a href="#" class="link">Список поступающих</a></li>
+				</ul>
+				<div class="mobile-menu__btns">
+					<a href="#" class="btn">Подать заявку</a>
+					<a href="" class="btn-ic"><i data-feather="user"></i></a>
+					<button class="btn-ic themeSlider"><img class="themeIcon" src="img/moon.svg" alt=""></button>
+				</div>
+			</div>
+		</div>
 		<header class="wrapper__header header">
 			<div class="header__container">
 				<div class="header__top">
@@ -28,8 +51,8 @@
 					<div class="header__right header__btns">
 						<a href="#" class="btn header__btn">Подать заявку</a>
 						<a href="" class="btn-ic header__btn-ic"><i data-feather="user"></i></a>
-						<button id="theme" class="btn-ic header__btn-ic"><img id="themeIcon" src="img/moon.svg" alt=""></button>
-						<button class="btn-ic header__btn-ic header__burger-ic"><i data-feather="menu"></i></button>
+						<button class="btn-ic header__btn-ic themeSlider"><img class="themeIcon" src="img/moon.svg" alt=""></button>
+						<button class="btn-ic header__btn-ic header__burger-ic mobileMenu"><i data-feather="menu"></i></button>
 					</div>
 				</div>
 				<div class="header__bottom">

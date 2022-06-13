@@ -9,7 +9,7 @@ function Init(){
         $('.logo').attr('src','img/logo-light.svg');
     }
     if($.cookie("theme") == 'dark'){
-        $('#themeIcon').attr('src','img/sun.svg');
+        $('.themeIcon').attr('src','img/sun.svg');
     }
     if(!$.cookie("theme")){
         $('html').attr('theme','light');
@@ -18,18 +18,23 @@ function Init(){
 
 
 $(document).ready(function(){
+
+    $('.mobileMenu').click(function(){
+        $('.mobile-menu').toggleClass('active');
+    });
+
     Init();
-    $('#theme').click(function(){ 
+    $('.themeSlider').click(function(){ 
         if($('html').attr('theme') == 'light'){
             $('html').attr('theme','dark');
             $('.logo').attr('src', 'img/logo-light.svg');
-            $('#themeIcon').attr('src','img/sun.svg');
+            $('.themeIcon').attr('src','img/sun.svg');
             $.cookie("theme",'dark');
         }
         else{
             $('html').attr('theme','light');
             $('.logo').attr('src', 'img/logo-dark.svg');
-            $('#themeIcon').attr('src','img/moon.svg');
+            $('.themeIcon').attr('src','img/moon.svg');
             $.cookie("theme",'light');
         }
     })
@@ -41,7 +46,6 @@ $(document).ready(function(){
         }
         $(this).toggleClass('active').children('.faq__overview').slideToggle(300)
     })
-
  });
 
 
