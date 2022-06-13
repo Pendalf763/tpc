@@ -51,6 +51,8 @@ html, body
 body
 	+font(var(--clr-txt), 10px, 500, 140%)
 	font-family: 'Raleway', sans-serif
+	&.lock
+		overflow: hidden
 
 a 
 	text-decoration: none
@@ -129,10 +131,10 @@ _ibg
 		margin-bottom: 150px
 
 [class*="__container"]
-	 width: 100%
-	 max-width: $container-width
-	 margin: 0 auto
-	 padding: 0 15px
+	width: 100%
+	max-width: $container-width
+	margin: 0 auto
+	padding: 0 15px
 
 
 
@@ -296,8 +298,7 @@ _ibg
 	width: 100%
 	height: 100%
 	padding: 24px 0
-	background: var(--clr-substrate);
-	backdrop-filter: blur(30px)
+	background: var(--clr-substrate)
 
 	z-index: 10
 
@@ -306,8 +307,10 @@ _ibg
 		visibility: visible
 		opacity: 1
 		right: 0
+		overflow-y: auto
 	&__close
 		background-color: var(--clr-blue)
+		min-width: 42px
 		& svg
 			stroke: #fff
 	&__logo
@@ -556,9 +559,16 @@ _ibg
 
 // REVIEWS
 
+.swiper-slide
+	padding-right: 15px
+	padding-left: 15px
+
 .reviews
 	&__item
 		position: relative
+		width: 100%
+		max-width: $container-width
+		margin: 0 auto
 		padding: 40px 50px 25px
 
 		border: 1px solid var(--clr-divider)
@@ -612,8 +622,11 @@ _ibg
 		display: flex;
 		align-items: center
 		color: var(--clr-blue)
+		& button
+			color: var(--clr-blue)
+			background-color: transparent
 	&__slide
-		padding: 2px 10px 0
+		padding: 0 10px 0
 	&__avatars
 		display: flex;
 		justify-content: center

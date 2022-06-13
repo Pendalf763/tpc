@@ -49,5 +49,19 @@ $(document).ready(function(){
     })
  });
 
+new Swiper('.swiper-container', {
+    navigation: {
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
+    },
+    hashNavigation: {
+        watchState: true,
+    },
 
+    autoHeight: true,
+
+    loop: true,
+
+    spaceBetween: 100,
+});
 feather.replace();
