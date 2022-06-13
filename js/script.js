@@ -21,6 +21,7 @@ $(document).ready(function(){
 
     $('.mobileMenu').click(function(){
         $('.mobile-menu').toggleClass('active');
+        $('body').toggleClass('lock')
     });
 
     Init();
