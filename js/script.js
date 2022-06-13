@@ -21,8 +21,20 @@ $(document).ready(function(){
 
     $('.mobileMenu').click(function(){
         $('.mobile-menu').toggleClass('active');
-        $('body').toggleClass('lock')
+        $('body').toggleClass('lock');
+        $('.header').toggleClass('hidden');
     });
+
+    $('.mobile-menu__link').click(function() {
+        $('.mobile-menu').removeClass('active');
+        $('.header').removeClass('hidden');
+        $('body').removeClass('lock');
+    });
+
+
+
+
+
 
     Init();
     $('.themeSlider').click(function(){ 
@@ -40,6 +52,11 @@ $(document).ready(function(){
         }
     })
 
+
+
+
+
+
     $('.faq__item').click(function(){
         if($('.faq__right').hasClass('one')){
             $('.faq__item').not($(this)).removeClass('active')
@@ -47,21 +64,50 @@ $(document).ready(function(){
         }
         $(this).toggleClass('active').children('.faq__overview').slideToggle(300)
     })
- });
 
-new Swiper('.swiper-container', {
-    navigation: {
-        nextEl: '.btn-next',
-        prevEl: '.btn-prev',
-    },
-    hashNavigation: {
-        watchState: true,
-    },
 
-    autoHeight: true,
 
-    loop: true,
 
-    spaceBetween: 100,
+
+
+    new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.btn-next',
+            prevEl: '.btn-prev',
+        },
+        hashNavigation: {
+            watchState: true,
+        },
+    
+        autoHeight: true,
+    
+        loop: true,
+    
+        spaceBetween: 100,
+    });
+
+
+
+
+
+let header = $('.header'),
+scrollPrev = 0;
+
+$(window).scroll(function() {
+	let scrolled = $(window).scrollTop();
+ 
+	if ( scrolled > 200 && scrolled > scrollPrev ) {
+		header.addClass('active');
+	} else {
+		header.removeClass('active');
+	}
+	scrollPrev = scrolled;
 });
-feather.replace();
+
+
+
+
+
+    feather.replace();
+
+ });

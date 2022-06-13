@@ -44,6 +44,10 @@ $container-width: 1244px
 	border: none
 	box-sizing: border-box
 
+html
+	scroll-behavior: smooth
+	scroll-padding-top: 10%
+
 html, body
 	height: 100%
 	background-color: var(--clr-bg)
@@ -95,29 +99,19 @@ _ibg
 	min-height: 100%
 	display: flex
 	flex-direction: column
-	&__light
-		position: relative
-		width: 100%
-
-.light
-	&__left,
-	&__right
+	&__header
 		position: fixed
-		width: 180px
-		height: 180px
-		background-color: var(--clr-blue)
-
-		border-radius: 50%
-		filter: blur(500px)
-
-	&__right
-		right: 0
 		top: 0
+		right: 0
+		left: 0
+		z-index: 9999
+		transition: .3s ease
 
 
 .page
 	flex: 1 1 auto
 	&__main
+		margin-top: 180px
 		margin-bottom: 140px
 	&__seats
 		margin-bottom: 140px
@@ -261,10 +255,14 @@ _ibg
 		color: var(--clr-txtPrimary)
 	&_clr-secondary
 		color: var(--clr-txtSecondary)
+	&_clr-blue
+		color: var(--clr-blue)
 
 .link
 	+font(var(--clr-txtSecondary), 18px, 600, 130%)
 	font-feature-settings: 'pnum' on, 'lnum' on
+	&_16px
+		+font(var(--clr-txt), 16px, 500, 130%)
 	&::after
 		content: ''
 		display: block
@@ -381,6 +379,11 @@ _ibg
 .header
 	padding: 25px 0
 	background-color: var(--clr-bg)
+	&.active
+		position: fixed
+		transform: translateY(-100%);
+	&.hidden
+		display: none
 	&__left,
 	&__right
 		display: flex;
@@ -513,6 +516,7 @@ _ibg
 	&__item
 		position: relative
 		display: flex;
+		flex-wrap: wrap
 		justify-content: space-between
 		padding: 20px 30px 22px
 
@@ -536,21 +540,33 @@ _ibg
 
 		transition: .3s ease
 	&__left
-		padding-right: 20px
+		padding-right: 50px
 	&__left > *
 		transition: .3s ease
-	&__item:hover &__left > *
+	&__item:hover &__left > *:not(.description_clr-blue)
 		color: var(--clr-txtPrimary)
 	&__left,
-	&__right
+	&__right,
+	&__quantity,
 		display: flex;
+	&__quantity > *:not(:last-child)
+		margin-right: 10px
+	&__right div:first-child
+		margin-right: 30px
 	&__left > *:not(:last-child),
 	&__right > *:not(:last-child)
-		margin-right: 20px
+		margin-right: 10px
 	&__left > :first-child
 		min-width: 86px
 	&__item:nth-child(odd)
 		background-color: var(--clr-substrate)
+	&__name
+		display: flex
+		& > *:not(:last-child)
+			margin-right: 20px
+	&__right
+		flex-wrap: wrap
+			
 
 
 
@@ -899,10 +915,18 @@ _ibg
 		& > *:hover::after
 			transform: translateY(7px)
 			opacity: 1
+	&__copyright
+		display: flex
+		& > *:not(:last-child)
+			max-width: 400px
+			margin-right: 50px
 
 .address-footer__address
 	max-width: 458px
 	margin-right: 50px
+
+.address-footer__time
+	max-width: 250px
 
 
 
@@ -912,6 +936,8 @@ _ibg
 // @MEDIA
 
 @media (max-width: 1280px)
+	.page__main
+		margin-top: 120px
 	.header
 		&__address,
 		&__bottom
@@ -954,7 +980,7 @@ _ibg
 		&__left
 			margin-bottom: 10px
 		&__right
-			margin-left: 106px
+			margin-left: 96px
 
 	.about
 		&__items
@@ -963,6 +989,9 @@ _ibg
 
 	.reviews
 		&__avatars
+			display: none
+		&__item::before,
+		&__item::after
 			display: none
 
 	.faq
@@ -974,6 +1003,14 @@ _ibg
 			padding-right: 0
 		&__map iframe
 			height: 500px
+		&__copyright
+			& > *:not(:last-child)
+				max-width: fit-content
+				margin-right: 50px
+
+	.address-footer__address,
+	.address-footer__time
+		max-width: fit-content
 
 
 
@@ -981,7 +1018,9 @@ _ibg
 
 @media (max-width: 768px)
 	.page
-		&__main,
+		&__main
+			margin-top: 160px
+			margin-bottom: 100px
 		&__seats,
 		&__reviews,
 		&__about,
@@ -1010,6 +1049,22 @@ _ibg
 	.seats
 		&__h2
 			text-align: center
+		&__item
+			width: calc( 100% + 30px )
+			margin: 0 -15px
+			padding: 20px 15px 22px
+
+			border-radius: 0
+		&__left > *:not(:last-child),
+		&__right > *:not(:last-child)
+    		margin-right: 10px;
+		&__right
+			margin-left: 96px
+		&__name
+			flex-direction: column
+			& > *:not(:last-child)
+				margin-right: 0
+				margin-bottom: 3px
 
 	.appt
 		&__inner
@@ -1019,11 +1074,6 @@ _ibg
 			text-align: center
 			padding: 55px 0 85px
 		&__txt
-			margin-bottom: 30px
-	.footer
-		&__head
-			flex-direction: column
-		&__logo
 			margin-bottom: 30px
 
 
@@ -1050,7 +1100,9 @@ _ibg
 
 @media (max-width: 480px)
 	.page
-		&__main,
+		&__main
+			margin-top: 115px
+			margin-bottom: 70px
 		&__seats,
 		&__reviews,
 		&__about,
@@ -1083,31 +1135,29 @@ _ibg
 			& video
 				border-radius: 0
 
-	.seats
-		&__item
-			width: calc( 100% + 30px )
-			margin: 0 -15px
-			padding: 20px 15px 22px
-
-			border-radius: 0
-		&__left > *:not(:last-child),
-		&__right > *:not(:last-child)
-    		margin-right: 10px;
-		&__right
-			margin-left: 96px
-
 	.reviews
 		&__info
 			flex-direction: column
+		&__item
+			padding: 25px 30px
 
 	.author-reviews
 		margin-bottom: 20px
 
 	.footer
 		text-align: center
-		&__address,
-		&__contacts
+		&__head
 			flex-direction: column
+		&__logo
+			margin-bottom: 30px
+		&__address,
+		&__contacts,
+		&__copyright
+			align-items: center
+			flex-direction: column
+			& > *:not(:last-child)
+				margin-right: 0
+				margin-bottom: 20px
 		&__contacts > *:not(:last-child)
 			margin-right: 0
 			margin-bottom: 10px

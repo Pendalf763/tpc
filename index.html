@@ -25,11 +25,11 @@
 					</div>
 				</div>
 				<ul class="mobile-menu__nav">
-					<li class="mobile-menu__item"><a href="#" class="link">Количество мест на поступление</a></li>
-					<li class="mobile-menu__item"><a href="#" class="link">Отзывы</a></li>
-					<li class="mobile-menu__item"><a href="#" class="link">О колледже</a></li>
-					<li class="mobile-menu__item"><a href="#" class="link">FAQ</a></li>
-					<li class="mobile-menu__item"><a href="#" class="link">Список поступающих</a></li>
+					<li class="mobile-menu__item"><a href="#seats" class="link mobile-menu__link">Количество мест на поступление</a></li>
+					<li class="mobile-menu__item"><a href="#reviews" class="link mobile-menu__link">Отзывы</a></li>
+					<li class="mobile-menu__item"><a href="#about" class="link mobile-menu__link">О колледже</a></li>
+					<li class="mobile-menu__item"><a href="#faq" class="link mobile-menu__link">FAQ</a></li>
+					<li class="mobile-menu__item"><a href="#" class="link mobile-menu__link">Список поступающих</a></li>
 				</ul>
 				<div class="mobile-menu__btns">
 					<a href="#" class="btn">Подать заявку</a>
@@ -42,7 +42,7 @@
 			<div class="header__container">
 				<div class="header__top">
 					<div class="header__left">
-						<a href="" class="header__logo"><img id="logo" class="img logo" src="img/logo-dark.svg" alt=""></a>
+						<a href="index.html" class="header__logo"><img id="logo" class="img logo" src="img/logo-dark.svg" alt=""></a>
 						<a href="tel:88482290096" class="description description_24px description_fw600 description_clr-primary header__phone">8 8482 29 00 96</a>
 						<div class="header__address">
 							<p class="description description_18px">ул. Комсомольская, 165, кабинет 102</p>
@@ -60,10 +60,10 @@
 					<div class="header__left">
 						<nav class="menu">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="#" class="menu__link link">Количество мест на поступление</a></li>
-								<li class="menu__item"><a href="#" class="menu__link link">Отзывы</a></li>
-								<li class="menu__item"><a href="#" class="menu__link link">О колледже</a></li>
-								<li class="menu__item"><a href="#" class="menu__link link">FAQ</a></li>
+								<li class="menu__item"><a href="#seats" class="menu__link link">Количество мест на поступление</a></li>
+								<li class="menu__item"><a href="#reviews" class="menu__link link">Отзывы</a></li>
+								<li class="menu__item"><a href="#about" class="menu__link link">О колледже</a></li>
+								<li class="menu__item"><a href="#faq" class="menu__link link">FAQ</a></li>
 								<li class="menu__item"><a href="#" class="menu__link link">Списки поступающих</a></li>
 							</ul>
 						</nav>
@@ -113,14 +113,17 @@
 				</div>
 			</section>
 
-			<section class="page__seats seats">
+			<section id="seats" class="page__seats seats">
 				<div class="seats__container">
 					<h2 class="h2 seats__h2">Количество мест на поступление</h2>
 					<div class="seats__items">
 						<div class="seats__item">
 							<div class="seats__left">
 								<p class="description description_20px description_clr-secondary">07.02.01</p>
-								<p class="description description_20px description_clr-secondary">Архитектура</p>
+								<div class="seats__name">
+									<p class="description description_20px description_clr-secondary">Архитектура</p>
+									<p class="description description_20px description_clr-blue">Присутствуют вступительные испытания</p>
+								</div>
 							</div>
 							<div class="seats__right">
 								<p class="description description_20px">Хозрасчет</p>
@@ -133,8 +136,14 @@
 								<p class="description description_20px description_clr-secondary">Строительство и эксплуатация зданий и сооружений</p>
 							</div>
 							<div class="seats__right">
-								<p class="description description_20px">Бюджет (очно)</p>
-								<p class="description description_20px description_clr-primary">50</p>
+								<div class="seats__quantity">
+									<p class="description description_20px">Хозрасчет</p>
+									<p class="description description_20px description_clr-primary">25</p>
+								</div>
+								<div class="seats__quantity">
+									<p class="description description_20px">Бюджет (очно)</p>
+									<p class="description description_20px description_clr-primary">50</p>
+								</div>
 							</div>
 						</div>
 						<div class="seats__item">
@@ -153,8 +162,14 @@
 								<p class="description description_20px description_clr-secondary">Строительство и эксплуатация автомобильных дорог и аэродромов</p>
 							</div>
 							<div class="seats__right">
-								<p class="description description_20px">Бюджет</p>
-								<p class="description description_20px description_clr-primary">35</p>
+								<div class="seats__quantity">
+									<p class="description description_20px">Хозрасчет</p>
+									<p class="description description_20px description_clr-primary">15</p>
+								</div>
+								<div class="seats__quantity">
+									<p class="description description_20px">Бюджет (очно)</p>
+									<p class="description description_20px description_clr-primary">35</p>
+								</div>
 							</div>
 						</div>
 						<div class="seats__item">
@@ -163,8 +178,14 @@
 								<p class="description description_20px description_clr-secondary">Управление, эксплуатация и обслуживание многоквартирного дома</p>
 							</div>
 							<div class="seats__right">
-								<p class="description description_20px">Бюджет</p>
-								<p class="description description_20px description_clr-primary">15</p>
+								<div class="seats__quantity">
+									<p class="description description_20px">Хозрасчет</p>
+									<p class="description description_20px description_clr-primary">10</p>
+								</div>
+								<div class="seats__quantity">
+									<p class="description description_20px">Бюджет (очно)</p>
+									<p class="description description_20px description_clr-primary">15</p>
+								</div>
 							</div>
 						</div>
 						<div class="seats__item">
@@ -250,7 +271,10 @@
 						<div class="seats__item">
 							<div class="seats__left">
 								<p class="description description_20px description_clr-secondary">40.02.02</p>
-								<p class="description description_20px description_clr-secondary">Правоохранительная деятельность</p>
+								<div class="seats__name">
+									<p class="description description_20px description_clr-secondary">Правоохранительная деятельность</p>
+									<p class="description description_20px description_clr-blue">Присутствуют вступительные испытания</p>
+								</div>
 							</div>
 							<div class="seats__right">
 								<p class="description description_20px">Хозрасчет</p>
@@ -272,7 +296,7 @@
 				</div>
 			</section>
 
-			<section class="page__reviews reviews">
+			<section id="reviews" class="page__reviews reviews">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<div data-hash="slide1" class="swiper-slide">
@@ -463,7 +487,7 @@
 								</div>
 								<div class="reviews__avatars">
 									<div class="reviews__avatar">
-										<a href="#slide3">
+										<a href="#slide1">
 											<img src="img/reviews/avatars/1.jpg" alt="">
 										</a>
 									</div>
@@ -609,7 +633,7 @@
 				</div>
 			</section>
 
-			<section class="page__about about">
+			<section id="about" class="page__about about">
 				<div class="about__container about__items">
 					<div class="about__left">
 						<h2 class="h2">О колледже</h2>
@@ -657,7 +681,7 @@
 				</div>
 			</section>
 
-			<section class="page__faq faq">
+			<section id="faq" class="page__faq faq">
 				<div class="faq__container faq__items">
 					<div class="faq__left">
 						<h2 class="h2 faq__h2">Часто задаваемые вопросы</h2>
@@ -742,6 +766,21 @@
 							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
 								<a href="#" class="faq__link">Правила подачи и рассмотрения апелляции по результатам вступительных испытаний</a>
 							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview description_fw600">
+								Формы документов
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">Форма - заявление о приёме</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">Форма - согласие на обработку персональных данных</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">Форма-уведомление о намерении</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">Форма договора об оказании планных образовательных услуг</a>
+							</p>
 						</div>
 						<div class="faq__item">
 							<p class="description description_20px description_clr-primary faq__title">Требования к уровню образования для поступления</p>
@@ -751,8 +790,55 @@
 						</div>
 						<div class="faq__item">
 							<p class="description description_20px description_clr-primary faq__title">Нормативная документация</p>
-							<p class="description description_18px description_lh150 description_clr-secondary faq__overview">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt facere iusto laudantium perspiciatis facilis explicabo reiciendis, officia tempore. Voluptatibus, praesentium voluptas. Fugit beatae tenetur quis, voluptatibus cupiditate sequi tempore tempora.
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+									Документы для абитуриентов
+								</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+									Условия приема на обучение по договорам об оказании платных образовательных услуг
+								</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+									Перечень специальностей (профессий), по которым объявлен прием.  
+								</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+									Требования к уровню образования, которое необходимо для поступления
+								</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+								Перечень вступительных испытаний. информация о формах проведения вступительных испытаний
+								</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+									Основные моменты правил приема 
+								</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+									Информация о наличии общежития 
+								</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+									Информация о медицинском осмотре
+								</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+									Правоустанавливающие документы
+								</a>
+							</p>
+							<p class="description description_18px description_lh150 description_clr-primary faq__overview">
+								<a href="#" class="faq__link">
+									Отсрочка от воинской службы
+								</a>
 							</p>
 						</div>
 					</div>
@@ -776,16 +862,16 @@
 				<div class="footer__inner">
 					<div class="footer__left">
 						<div class="footer__head">
-							<a href="" class="footer__logo"><img class="img logo" src="img/logo-dark.svg" alt=""></a>
+							<a href="index.html" class="footer__logo"><img class="img logo" src="img/logo-dark.svg" alt=""></a>
 							<div class="footer__socials">
-								<a href="#"><img src="img/vk.svg" alt=""></a>
-								<a href="#"><img src="img/yt.svg" alt=""></a>
+								<a href="https://vk.com/tpcol"><img src="img/vk.svg" alt=""></a>
+								<a href="https://www.youtube.com/user/tpcol"><img src="img/yt.svg" alt=""></a>
 							</div>
 						</div>
 						<div class="footer__txt">
 							<div class="footer__address address-footer">
 								<h2 class="h2 address-footer__address">ул. Комсомольская, 165, кабинет 102</h2>
-								<h2 class="h2">ПН-ПТ <br> 8:00 - 17:00</h2>
+								<h2 class="h2 address-footer__time">ПН-ПТ 8:00 - 17:00</h2>
 							</div>
 							<div class="footer__contacts">
 								<a href="tel:88482290096"><h2 class="h2">8 8482 29 00 96</h2></a>
@@ -793,6 +879,7 @@
 							</div>
 							<div class="footer__copyright">
 								<p class="description description_16px">© 2022 Тольяттинский политехнический колледж | Все права защищены</p>
+								<a href="https://vk.com/id165870162" class="link link_16px">Разработка — Александр Черный</a>
 							</div>
 						</div>
 					</div>
